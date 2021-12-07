@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style type="text/css">
+        /* ## 2.Web Desgin using CSS */
+
+        /* Google Web Font */
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+        /* A.Common Design */
+        * {box-sizing: border-box;}
+        html, body {font-size: 62.5%;}
+        p {margin: 0; padding: 0;}
+        body {
+            font-family: 'Titillium Web', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            color: #2F3138;
+            width: 100vw;
+            height: 100vh;
+        }
+        div.wrap {
+            max-width: 75rem;
+            min-width: 75rem;
+            width: 100%;
+            height: 40rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.4rem 1rem 0 rgb(0 0 0 / 20%), 0 0.4rem 2rem 0 rgb(0 0 0 / 19%);
+            background: url('./img/blob-scatter-haikei.svg') no-repeat 0 0;
+        }
+        .color_blue {color: #0066FF;}
+        .color_purple {color: #DA4DDA;}
+        .color_pink {color: #FF52A2;}
+        .color_orange {color: #FF876E;}
+        .color_yellow {color: #FFC355;}
+        .bg_color_blue {background: #0066FF;}
+        .bg_color_purple {background: #DA4DDA;}
+        .bg_color_pink {background: #FF52A2;}
+        .bg_color_orange {background: #FF876E;}
+        .bg_color_yellow {background: #FFC355;}
+
+
+
+        /* B.Portfolio Design  */
+        div.contents_wrap {
+            position: relative;
+            max-width: 75rem;
+            min-width: 75rem;
+            width: 100%;
+            height: 35rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        div.contents_02 {
+            flex-direction: column;
+        }
+        div.left_side, div.right_side {padding: 2rem 2rem 5rem; height: 100%;}
+        div.left_side {
+            flex: 3.5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        div.right_side {
+            flex: 6.5;
+        }
+
+        /* B-1.My Image Design */
+        div.content_box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        div.my_img {
+            width: 19rem;
+            height: 19rem;
+            border-radius: 50%;
+            background-image: url('ozodbek.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /* B-2.SNS Button Design */
+        div.middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .snsbtn {
+            display: inline-block;
+            width: 4.5rem;
+            height: 4.5rem;
+            background-color: #f1f1f1;
+            margin: 0 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+        .snsbtn:nth-child(1) { color: #4267b2; }
+        .snsbtn:nth-child(2) { color: #833AB4; }
+        .snsbtn:nth-child(3) { color: #0088cc; }
+        .snsbtn i {
+            line-height: 4.5rem;
+            font-size: 2rem;
+            transition: 0.2s linear;
+        }
+        .snsbtn:hover i {
+            transform: scale(1.3);
+            color: white;
+        }
+        .snsbtn::before{
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            transform: rotate(45deg);
+            left: -110%;
+            top: 90%;
+        }
+        .snsbtn:nth-child(1)::before{ background-color: #4267b2;}
+        .snsbtn:nth-child(2)::before{ background-color: #833AB4;}
+        .snsbtn:nth-child(3)::before{ background-color: #0088cc;}
+
+        .snsbtn:hover::before {
+            animation: car 0.7s 1;
+            top: -10%;
+            left: -10%;
+        }
+        @keyframes car {
+            0% {
+                left: -110%;
+                top: 90%;
+            }50% {
+                left: 10%;
+                top: -30%;
+            }100% {
+                top: -10%;
+                left: -10%;
+            }
+        }
+
+        /* B-3.Name and Job Design */
+        div.left_content_box {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+
+        div.my_name {
+            font-size: 4.5rem;
+            font-weight: bold;
+        }
+        span.last_name {
+            position: relative;
+            padding-left: 2rem; 
+        }
+        span.last_name::after {
+            content: ''; 
+            position: absolute;
+            width: 8rem;
+            height: 0.4rem;
+            bottom: 0.6rem;
+            right: 0;
+            background: #0066FF;
+        }
+        div.my_job{
+            font-size: 1.9rem;
+        }
+        div.my_job > span {
+            display: block;
+            padding-top: 0.5rem;
+        }
+        hr.split_line {
+            width: 85%;
+            margin: 3rem 0;
+            border: 0.03rem solid #E1E1E1;
+        }
+
+        /* B-4.Mobile, Email, Talk, Site Design */
+        div.my_info_content_box {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-size: 1.6rem;
+            gap: 0.5rem;
+        }
+        div.my_info > span {display: inline-block;}
+        div.my_info > span:nth-child(1) {
+            font-weight: bold;
+            color: #0066FF;
+            width: 2rem;
+        }
+
+        /* C. SKills */
+        p.content_title {
+            font-size: 1.9rem;
+            color: #0066FF;
+            font-weight: bold;
+            padding-left: 0.5rem;
+        }
+        div.contents {
+            display: flex; 
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center; 
+            font-size: 1.6rem;
+            margin-top: 1rem;
+        }
+        .skills_box {
+            width: 35rem;
+        }
+
+        span.content_name {display: block; text-align: left; width: 100%; padding-left: 1.5rem;}
+        div.bar_border {
+            width: 100%;
+            height: 2rem;
+            background-color: #f1f1f1;
+            overflow: hidden;
+            border-radius: 1.6rem;
+        }
+        div.bar_fill {
+            height: 2rem;
+            background: linear-gradient(-70deg,#FFC355,#FF52A2);
+            text-align: center;
+            line-height: 2rem;
+            color: white;
+            transition: all ease .3s;
+        }
+
+        /* D. Licenses */
+        div.license_box {
+            /* position: absolute; */
+            top: 2rem;
+            right: 0rem;
+        }
+        div.license_contents {
+            align-items: flex-start;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 42rem;
+        }
+        span.license {
+            width: 21rem;
+            margin-bottom: 1rem;
+        }
+        span.license::before {
+            content: '*';
+            color: #FF52A2;
+            font-weight: bold;
+            padding-right: 0.5rem;
+        }
+
+
+
+
+        /* C. Tab Menu Design */
+        div.tab_wrap {
+            width: 100%;
+            height: 2.5rem;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+        }
+        span.split_line {
+            height: 70%; 
+            display: inline-block; 
+            border-left: 0.1rem solid #c1c1c1; }
+        input[type="radio"] {display: none;}
+        input[type="radio"] + label {
+            display: inline-block;
+            cursor: pointer;
+        }
+        input[type="radio"]:checked + label {
+            color: #0066FF;
+        }
+        div.contents_wrap {display: none;}
+        
+        /* Responsive Web Design */
+        /* 1.Smart Phone */
+        @media (min-width: 320px) and (max-width: 768px) {
+            html, body {font-size: 53%;}
+            div.wrap {transform: rotate(90deg);}
+            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ## 1.Create a layout using HTML-->
+    <div class="wrap">
+        <!-- #1.Introduce Tab Contents -->
+        <div class="contents_wrap contents_01" style="display: flex;">
+            <!-- 이미지(증명사진)와 SNS -->
+            <div class="left_side">
+                <div class="content_box">
+                    <div class="my_img"></div>
+                </div>
+
+                <div class="content_box">
+                    <div class="side_sns">
+                        <div class="middle">
+                            <a class="snsbtn" href="https://www.facebook.com/profile.php?id=100073588726622">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="snsbtn" href="https://www.instagram.com/bek_muazzin">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="snsbtn" href="https://telegram.me/Bek_muazzin">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 이름, 직업, 연락처(이메일, 전화번호, 카카오톡) -->
+            <div class="right_side">
+                <div class="left_content_box">
+                    <div class="my_name">
+                        <span>Ozodbek</span><span class="last_name">Sayfiddinov</span>
+                    </div>
+                </div>
+                <div class="left_content_box">
+                    <div class="my_job">
+                        <span>Wep pragrammer </span>
+                        <span>Full Stack Wep Developer</span>
+                    </div>
+                </div>
+                <hr class="split_line">
+                <div class="left_content_box my_info_content_box">
+                    <div class="my_info">
+                        <span>M.</span>
+                        <span>+821082689808</span>
+                    </div>
+                    <div class="my_info">
+                        <span>E.</span>
+                        <span>Muazzin769698gmail.com</span>
+                    </div>
+                    <div class="my_info">
+                        <span>T.</span>
+                        <span>Bek_Muazzin</span>
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+
+        <!-- #2.SkillS Tab Contents -->
+        <div class="contents_wrap contents_02">
+            <div class="content_in_box skills_box">
+                <p class="content_title">SKILLS</p>
+                <div class="contents">
+                    <span class="content_name">Skills01</span>
+                    <div class="bar_border">
+                        <div class="bar_fill" style="width: 80%">80%</div>
+                    </div>
+                </div>    
+
+                <div class="contents">
+                    <span class="content_name">Skills02</span>
+                    <div class="bar_border">
+                        <div class="bar_fill" style="width: 60%">60%</div>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <span class="content_name">Skills03</span>
+                    <div class="bar_border">
+                        <div class="bar_fill" style="width: 90%">90%</div>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <span class="content_name">Skills04</span>
+                    <div class="bar_border">
+                        <div class="bar_fill" style="width: 40%">40%</div>
+                    </div>
+                </div>
+                <div class="contents">
+                    <span class="content_name">Skills05</span>
+                    <div class="bar_border">
+                        <div class="bar_fill" style="width: 50%">50%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- #3.Licenses Tab Contents -->
+        <div class="contents_wrap contents_03">
+            <div class="content_in_box license_box">
+                <p class="content_title">Pragram Language</p>
+                <div class="contents license_contents">
+                    <span class="license">PHP</span>
+                    <span class="license">JavaScript</span>
+                    <span class="license">HTML5</span>
+                    <span class="license">CSS3</span>
+                    <span class="license">SQL</span>
+                    <span class="license">MSQL</span>
+                    <span class="license">Vuejs</span>
+                    <span class="license">Symfony</span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="tab_wrap">
+            <!-- Let me introduce myself -->
+            <input type="radio" id="tab_01" name="tab_menu" checked>
+            <label for="tab_01">INTRODUCE</label>
+            
+            <span class="split_line"></span> 
+
+            <!-- Skills -->
+            <input type="radio" id="tab_02" name="tab_menu">
+            <label for="tab_02">SKILLS</label>
+
+            <span class="split_line"></span>
+
+            <!-- Liceneses and Language -->
+            <input type="radio" id="tab_03" name="tab_menu">
+            <label for="tab_03">Program language</label>
+            
+        </div>
+    </div>
+    
+
+    <!-- ## 3.Dynamic work using JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).on("change", "input[name='tab_menu']", function() {
+            let select_tab = $(this).attr('id');
+            let tab_num = select_tab.replace(/[^0-9]/g, '');
+            
+            $('.contents_wrap').css('display', 'none');
+            $('.contents_' + tab_num).css('display', 'flex');
+        });
+    </script>
+</body>
+</html>
